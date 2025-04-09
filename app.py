@@ -1,8 +1,11 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 import os
 import json
 
 app = Flask(__name__)
+CORS(app)
+
 JSON_FILE = 'data.json'
 
 @app.route('/data', methods=['GET', 'POST'])
